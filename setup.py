@@ -23,7 +23,7 @@ extras = {"dev": ["pytest", "pytest-env", "pytest-xdist"]}
 setup(
     name="syncmatrix",
     # corresponds to __version__
-    version="0.1.0",
+    version="0.2.1",
     description="",
     long_description=open("README.md").read(),
     url="https://www.github.com/khulnasoft/syncmatrix",

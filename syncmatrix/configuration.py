@@ -30,8 +30,7 @@ def interpolate_env_var(env_var: str) -> str:
         substituted = os.path.expanduser(os.path.expandvars(str(env_var)))
         if substituted == env_var:
             return substituted
-        else:
-            env_var = substituted
+        env_var = substituted
 
 
 def create_user_config(dest_path: str, source_path: str = DEFAULT_CONFIG) -> None:

@@ -2,7 +2,6 @@ import copy
 import hashlib
 import inspect
 import itertools
-import random
 import tempfile
 import uuid
 from collections import Counter
@@ -10,7 +9,6 @@ from contextlib import contextmanager
 from typing import (
     TYPE_CHECKING,
     Any,
-    AnyStr,
     Dict,
     Iterable,
     Iterator,
@@ -27,6 +25,7 @@ import jsonpickle
 from mypy_extensions import TypedDict
 
 import syncmatrix
+import syncmatrix.environments
 import syncmatrix.schedules
 from syncmatrix.core.edge import Edge
 from syncmatrix.core.task import Parameter, Task
