@@ -16,10 +16,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.10'
 
@@ -28,8 +28,10 @@ jobs:
         python -m pip install --upgrade pip
     - name: Build DMG
       run: |
-        chmod +x build_scripts/openai/macos_build.sh
-        ./build_scripts/openai/macos_build.sh
+        # Expected structure: build_scripts/openai/macos_build.sh must exist relative to repository root.
+        MACOS_BUILD_SCRIPT="build_scripts/openai/macos_build.sh"
+        chmod +x "$MACOS_BUILD_SCRIPT"
+        ./"$MACOS_BUILD_SCRIPT"
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
@@ -52,7 +54,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-    - name: Build EXE
+        bash build_scripts/openai/windows_build.sh
       run: |
         sh build_scripts/openai/windows_build.sh
     - name: Upload artifact
