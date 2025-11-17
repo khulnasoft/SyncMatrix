@@ -1,0 +1,9 @@
+{
+  "name": "@syncmatrix/design-docs",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "@types/prismjs": "^1.26.5",
+    "prismjs": "^1.29.0"
+  }
+}

@@ -1,0 +1,10 @@
+packages:
+  - 'packages/ui-library'
+  - 'packages/vue-charts'
+  - 'packages/vue-compositions'
+  - 'packages/design'
+  - 'packages/eslint-config'
+  - 'packages/graphs/core'
+  - 'packages/graphs/vue'
+  - 'packages/graphs'
+  - 'packages/graphs/react'

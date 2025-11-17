@@ -1,0 +1,90 @@
+{
+    "name": "@syncmatrix/ui-library",
+    "version": "1.0.0",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KhulnaSoft/syncmatrix.git",
+        "directory": "ui/packages/ui-library"
+    },
+    "bugs": {
+        "url": "https://github.com/KhulnaSoft/syncmatrix/issues"
+    },
+    "homepage": "https://github.com/KhulnaSoft/syncmatrix#readme",
+    "keywords": [
+        "syncmatrix 1.0",
+        "vue3"
+    ],
+    "type": "module",
+    "scripts": {
+        "build": "vite build && vue-tsc && tsc-alias",
+        "changelog": "auto-changelog --package --commit-limit 0",
+        "dev": "vue-tsc -w & tsc-alias -w & vite build -w",
+        "lint:fix": "eslint src --fix",
+        "lint": "eslint src",
+        "test": "vitest",
+        "validate:types": "vue-tsc --noEmit",
+        "version": "npm run changelog && git add CHANGELOG.md",
+        "release": "./ui-library-release"
+    },
+    "main": "./dist/ui-library.js",
+    "module": "./dist/ui-library.js",
+    "types": "./dist/src/index.d.ts",
+    "exports": {
+        "./src/*": "./src/*",
+        "./dist/*": "./dist/*",
+        "./ui-library.css": "./dist/ui-library.css",
+        "./tailwind.config": "./src/tailwind.config.ts",
+        ".": {
+            "types": "./dist/src/index.d.ts",
+            "import": "./dist/ui-library.js",
+            "require": "./dist/ui-library.umd.js"
+        }
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
+    "dependencies": {
+        "@syncmatrix/graphs": "workspace:*",
+        "axios": "^1.12.2",
+        "cronstrue": "^3.3.0",
+        "d3": "7.9.0",
+        "date-fns": "4.1.0",
+        "date-fns-tz": "3.2.0",
+        "lodash.isequal": "4.5.0",
+        "lodash.merge": "4.6.2"
+    },
+    "devDependencies": {
+        "@syncmatrix/eslint-config": "workspace:*",
+        "@types/d3": "7.4.3",
+        "@types/lodash.camelcase": "4.3.9",
+        "@types/lodash.debounce": "4.0.9",
+        "@types/lodash.isequal": "^4.5.8",
+        "@types/lodash.merge": "4.6.9",
+        "@types/node": "^24.4.0",
+        "@types/prismjs": "^1.26.5",
+        "@vitejs/plugin-vue": "6.0.1",
+        "auto-changelog": "^2.5.0",
+        "autoprefixer": "10.4.21",
+        "eslint": "8.57.1",
+        "lodash.camelcase": "4.3.0",
+        "lodash.debounce": "4.0.8",
+        "postcss": "8.5.6",
+        "tailwindcss": "3.4.17",
+        "tsc-alias": "1.8.16",
+        "typescript": "^5.9.2",
+        "vite": "7.1.5",
+        "vite-svg-loader": "^5.1.0",
+        "vitest": "^3.2.4",
+        "vue-tsc": "^3.0.7"
+    },
+    "peerDependencies": {
+        "@syncmatrix/design": "workspace:*",
+        "@syncmatrix/vue-charts": "workspace:*",
+        "@syncmatrix/vue-compositions": "workspace:*",
+        "vee-validate": "^4.7.0",
+        "vue": "^3.5.0",
+        "vue-router": "^4.3.0"
+    }
+}

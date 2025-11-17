@@ -1,0 +1,63 @@
+{
+  "name": "@syncmatrix/vue-charts",
+  "version": "1.0.0",
+  "private": false,
+  "keywords": [
+    "vue3",
+    "charts",
+    "d3"
+  ],
+  "scripts": {
+    "serve": "vite --host --mode=demo",
+    "dev": "vue-tsc -w & tsc-alias -w & vite build -w",
+    "build:demo": "vite build --mode=demo",
+    "build": "vite build && vue-tsc && tsc-alias",
+    "lint": "eslint src && eslint demo",
+    "lint:fix": "eslint src --fix && eslint demo --fix",
+    "validate:types": "vue-tsc",
+    "version": "npm run changelog && git add CHANGELOG.md",
+    "release": "./vue-charts-release",
+    "changelog": "auto-changelog --package --commit-limit 0"
+  },
+  "type": "module",
+  "main": "dist/vue-charts.js",
+  "module": "dist/vue-charts.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    "./vue-charts.css": "./dist/vue-charts.css",
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/vue-charts.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@syncmatrix/eslint-config": "workspace:*",
+    "@types/d3": "7.4.3",
+    "@types/lodash.debounce": "4.0.9",
+    "@types/node": "^24.5.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "auto-changelog": "2.4.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "8.57.0",
+    "tailwindcss": "3.4.11",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5",
+    "vite-svg-loader": "^5.1.0",
+    "vue-router": "^4.3.0",
+    "vue-tsc": "^3.0.7"
+  },
+  "dependencies": {
+    "d3": "7.9.0",
+    "date-fns": "^2.30.0",
+    "lodash.debounce": "4.0.8"
+  },
+  "peerDependencies": {
+    "@syncmatrix/design": "workspace:*",
+    "@syncmatrix/vue-compositions": "workspace:*",
+    "vue": "^3.5.21"
+  }
+}

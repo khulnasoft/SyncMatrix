@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+docker compose down -v
+docker compose up -d test-db
+
+DB_URL=postgresql+asyncpg://syncmatrix:syncmatrix@localhost:15432/syncmatrix
+SYNCMATRIX_API_DATABASE_CONNECTION_URL=$DB_URL pytest --exclude-services $@

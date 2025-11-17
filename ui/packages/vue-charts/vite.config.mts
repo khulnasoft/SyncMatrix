@@ -1,0 +1,62 @@
+import { resolve } from 'path'
+import { default as vue } from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+import svgLoader from 'vite-svg-loader'
+
+// https://vitejs.dev/config/
+// eslint-disable-next-line import/no-default-export
+export default defineConfig(({ mode }) => {
+  const baseConfig = {
+    resolve: {
+      alias: [
+        {
+          find: '@/demo',
+          replacement: resolve(__dirname, './demo'),
+        },
+        {
+          find: '@',
+          replacement: resolve(__dirname, 'src'),
+        },
+      ],
+    },
+    plugins: [vue(), svgLoader()],
+  }
+
+  if (mode == 'demo') {
+    return {
+      root: './demo',
+      ...baseConfig,
+      build: {
+        cssCodeSplit: false,
+      },
+    }
+  }
+
+  return {
+    ...baseConfig,
+    build: {
+      outDir: 'dist',
+      emptyOutDir: true,
+      sourcemap: true,
+      lib: {
+        entry: 'src/index.ts',
+        name: 'vue-charts',
+      },
+      rollupOptions: {
+        external: [
+          'vue',
+          '@syncmatrix/design',
+          '@syncmatrix/vue-compositions',
+        ],
+        output: {
+          exports: 'named',
+          // Provide vue as a global variable to use in the UMD build
+          globals: {
+            vue: 'Vue',
+          },
+        },
+      },
+    },
+  }
+
+})

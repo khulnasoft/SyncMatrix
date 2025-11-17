@@ -1,0 +1,71 @@
+{
+  "name": "@syncmatrix/graphs",
+  "private": false,
+  "version": "3.0.7",
+  "description": "Large scale graphs designed for Syncmatrix",
+  "scripts": {
+    "dev": "tsc -w & tsc-alias -w & vite build -w",
+    "build": "tsc && tsc-alias && vite build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "changelog": "auto-changelog --package --commit-limit 0",
+    "release": "./graphs-release",
+    "validate:types": "tsc --noEmit"
+  },
+  "main": "./dist/graphs.umd.js",
+  "module": "./dist/graphs.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/graphs.mjs",
+      "require": "./dist/graphs.umd.js",
+      "types": "./dist/types/src/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/types/src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhulnaSoft/syncmatrix.git",
+    "directory": "ui/packages/graphs/core"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KhulnaSoft/syncmatrix/issues"
+  },
+  "homepage": "https://github.com/KhulnaSoft/syncmatrix#readme",
+  "devDependencies": {
+    "@syncmatrix/eslint-config": "workspace:*",
+    "@types/d3": "7.4.3",
+    "@types/fontfaceobserver": "^2.1.2",
+    "@types/lodash.isequal": "4.5.8",
+    "@types/lodash.merge": "4.6.9",
+    "@types/lodash.throttle": "^4.1.9",
+    "@types/node": "^24.4.0",
+    "@vitejs/plugin-vue": "6.0.1",
+    "autoprefixer": "10.4.21",
+    "eslint": "9.36.0",
+    "postcss": "8.5.6",
+    "tailwindcss": "4.1.13",
+    "tsc-alias": "1.8.16",
+    "typescript": "5.9.2",
+    "vite": "7.1.7",
+    "vite-svg-loader": "^5.1.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.1.1",
+    "@pixi-essentials/cull": "2.0.0",
+    "@pixi/ui": "^1.0.1",
+    "d3": "7.9.0",
+    "date-fns": "4.1.0",
+    "fontfaceobserver": "^2.3.0",
+    "gsap": "^3.12.2",
+    "lodash.isequal": "4.5.0",
+    "lodash.throttle": "^4.1.1",
+    "pixi-viewport": "^5.0.3",
+    "pixi.js": "^7.3.2"
+  }
+}
