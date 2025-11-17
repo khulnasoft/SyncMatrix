@@ -1,0 +1,60 @@
+
+[general]
+# the seed value for random Task and Flow ids. You should never set this
+# manually.
+id_seed = false
+
+
+[server]
+# the Syncmatrix Server address
+api_server = "http://127.0.0.1:4200"
+graphql_server = "http://127.0.0.1:4242/graphql"
+
+
+[security]
+# This key is used to encrypt serialized workflows and tasks. It must be
+# the same on every machine that deserializes workflows.
+# If you do not provide an encryption key, data will not be encrypted.
+# encryption_key =
+
+
+
+[logging]
+# The logging level: NOTSET, DEBUG, INFO, WARNING, ERROR, or CRITICAL
+level = "INFO"
+
+# The log format
+format = "[%(asctime)s] %(levelname)s - %(name)s | %(message)s"
+
+[flows]
+# the global default Flow. Set to None to disable; this will require all Flows
+# to be created explicitly.
+global_default_flow = "Global Flow"
+
+# The default project for new Flows
+default_project = "Flows"
+
+# The default version for new Flows
+# default_version = 1
+default_version = "1"
+
+# the seed value for random Task and Flow ids. You should never set this
+# manually.
+id_seed = false
+
+
+[tasks]
+# task results can not exceed this size (in bytes); larger results must be
+# serialized
+max_result_size = 2000
+
+# default serializer
+# default_serializer = syncmatrix.utilities.json.JSONSerializer
+
+[tests]
+
+# turn on test mode
+test_mode = false
+
+# raise error if tasks/flows fail unexpectedly
+raise_run_errors = false

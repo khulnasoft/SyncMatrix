@@ -1,8 +1,6 @@
-[![CircleCI](https://circleci.com/gh/khulnasoft/syncmatrix/tree/master.svg?style=svg&circle-token=28689a55edc3c373486aaa5f11a1af3e5fc53344)](https://circleci.com/gh/khulnasoft/syncmatrix/tree/master)
+# Syncmatrix
 
-# SyncMatrix
-
-## Welcome to # SyncMatrix!
+## Welcome to Syncmatrix!
 
 Syncmatrix is a workflow management system designed for modern data infrastructures.
 
@@ -24,7 +22,7 @@ Syncmatrix requires Python 3.4+.
 
 ### Install
 ```
-git clone https://github.com/khulnasoft/syncmatrix.git
+git clone https://gitlab.com/syncmatrix/syncmatrix.git
 cd syncmatrix
 pip install .
 ```
@@ -35,11 +33,22 @@ pip install .
 ### Install
 
 ```bash
-git clone https://github.com/khulnasoft/syncmatrix.git
+git clone https://gitlab.com/syncmatrix/syncmatrix.git
 cd syncmatrix
-conda env create
-pip install -e .
+pip install -e ".[dev]"
+# pre-commit install
 ```
+
+<!-- ### Pre-commit
+Syncmatrix enforces [Black](https://github.com/ambv/black) and
+[isort](https://github.com/timothycrosley/isort) formatting on every commit, using
+[pre-commit](https://pre-commit.com/). If a commit violates a pre-commit requirement,
+the commit will fail and the responsible files will be updated automatically. The
+changes can then be recommitted successfully.
+
+For example, if a modified file doesn't conform to Black standards, the commit will fail
+(and the error message should indicate why). Black will automatically be run on the file
+to fix any errors, and another attempt to commit will be successful. -->
 
 ### Unit Tests
 
