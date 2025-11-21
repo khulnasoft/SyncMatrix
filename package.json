@@ -16,6 +16,6 @@
     "url": "git+https://gihub.com/khulnasoft/syncmatrix.git"
   },
   "devDependencies": {
-    "vuepress": "^0.10.1"
+    "vuepress": "^1.9.10"
   }
 }
